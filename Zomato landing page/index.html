@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zomato Landing Page</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <div class="logo">Zomato</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="auth">
+        <button class="login" onclick="openLogin()">Login</button>
+        <button class="signup">Sign Up</button>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <h1>Discover the best food & drinks</h1>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search food or restaurant">
+        <button onclick="searchFood()">Search</button>
+    </div>
+</section>
+
+<!-- Food Categories -->
+<section class="section">
+    <h2>Food Categories</h2>
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3">
+            <div class="card-content"><h3>Pizza</h3></div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+            <div class="card-content"><h3>Burger</h3></div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398">
+            <div class="card-content"><h3>Biryani</h3></div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
+            <div class="card-content"><h3>Dessert</h3></div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Featured Restaurants -->
+<section class="section">
+    <h2>Featured Restaurants</h2>
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+            <div class="card-content">
+                <h3>Spice Hub</h3>
+                <p>⭐ 4.5 • Indian, Chinese</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5">
+            <div class="card-content">
+                <h3>Pizza Palace</h3>
+                <p>⭐ 4.3 • Italian</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+            <div class="card-content">
+                <h3>Burger House</h3>
+                <p>⭐ 4.2 • Fast Food</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+    <h2>About</h2>
+    <p>
+        Zomato is a food delivery platform that helps users discover restaurants,
+        explore menus, and order food online easily.
+    </p>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Email: support@zomato.com</p>
+    <p>Phone: +91 9876543210</p>
+</section>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeLogin()">&times;</span>
+        <h2>Login</h2>
+
+        <input type="text" id="loginEmail" placeholder="Email" class="input-field">
+        <input type="password" id="loginPassword" placeholder="Password" class="input-field">
+
+        <button class="modal-btn" onclick="validateLogin()">Login</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Zomato Clone</p>
+</footer>
+
+<script>
+function openLogin() {
+    document.getElementById("loginModal").style.display = "flex";
+}
+
+function closeLogin() {
+    document.getElementById("loginModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    let modal = document.getElementById("loginModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+// LOGIN VALIDATION
+function validateLogin() {
+    let email = document.getElementById("loginEmail").value;
+    let password = document.getElementById("loginPassword").value;
+
+    if (email === "" || password === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    if (!email.includes("@")) {
+        alert("Invalid email");
+        return;
+    }
+
+    alert("Login successful ✅");
+    closeLogin();
+}
+
+// SEARCH FUNCTION
+function searchFood() {
+    let input = document.getElementById("searchInput").value;
+
+    if (input === "") {
+        alert("Please enter something to search!");
+    } else {
+        alert("You searched for: " + input);
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --glass-bg: rgba(255,255,255,0.25);
+    --glass-border: rgba(255,255,255,0.18);
+    --text-primary: #333;
+    --text-secondary: #666;
+    --success: #4ade80;
+}
+
+[data-theme="dark"] {
+    --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    --glass-bg: rgba(0,0,0,0.25);
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: var(--primary-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 550px;
+    width: 100%;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    color: white;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--glass-bg);
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* Card */
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    padding: 25px;
+    border-radius: 20px;
+}
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* Select Group */
+.select-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* Buttons */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.action-buttons button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Convert Button */
+.convert-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: var(--success);
+    color: white;
+    cursor: pointer;
+}
+
+/* Result */
+.result {
+    margin-top: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.4s;
+}
+
+.result.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.result-value {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* History */
+.history {
+    margin-top: 20px;
+}
+
+.history-item {
+    background: rgba(255,255,255,0.2);
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}

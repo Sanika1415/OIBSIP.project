@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Temperature Converter</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Floating Shapes -->
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+
+        <!-- Theme Toggle -->
+        <div class="theme-toggle" onclick="toggleTheme()">
+            <div class="toggle-switch" id="toggleSwitch">
+                <div class="toggle-ball"></div>
+            </div>
+            <span>Theme</span>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title">🌡️ Temperature Converter</h1>
+            <p class="subtitle">Convert temperatures instantly with style</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value" id="conversionCount">0</div>
+                <div class="stat-label">Conversions</div>
+            </div>
+        </div>
+
+        <!-- Converter Card -->
+        <div class="card">
+
+            <input type="number" id="temperatureInput" placeholder="Enter temperature">
+
+            <div class="select-group">
+                <select id="fromUnit">
+                    <option value="c">Celsius</option>
+                    <option value="f">Fahrenheit</option>
+                    <option value="k">Kelvin</option>
+                </select>
+
+                <select id="toUnit">
+                    <option value="f">Fahrenheit</option>
+                    <option value="c">Celsius</option>
+                    <option value="k">Kelvin</option>
+                </select>
+            </div>
+
+            <div class="action-buttons">
+                <button onclick="swapUnits()">Swap</button>
+                <button onclick="clearInput()">Clear</button>
+                <button onclick="copyResult()">Copy</button>
+            </div>
+
+            <button class="convert-btn" onclick="convertTemperature()">
+                Convert
+            </button>
+
+            <div class="result" id="result">
+                <div class="result-value" id="resultValue">-</div>
+                <div class="result-unit" id="resultUnit">-</div>
+            </div>
+
+            <div id="history" class="history"></div>
+
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>
